@@ -71,7 +71,6 @@ app.post("/add/teacher", async (req, res) => {
 
 
 
-// Create a dynamic delete route to remove a rating by it's ID
   
  
 
