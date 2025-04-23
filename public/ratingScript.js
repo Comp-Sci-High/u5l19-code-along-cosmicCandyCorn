@@ -19,7 +19,3 @@ form.addEventListener("submit", async (e) => {
     window.location.href = "/ratings"
 })
 
-// write the async function deleteRating
-// make sure it redirects to /ratings after
-
-
