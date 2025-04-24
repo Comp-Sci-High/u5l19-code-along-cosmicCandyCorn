@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const req = require("express/lib/request");
 
 const app = express();
 
@@ -70,9 +71,22 @@ app.post("/add/teacher", async (req, res) => {
 // Create a dynamic delete route to remove a teacher by their ID
 
 
-
+app.delete('/delete/teacher/:_id', async (req, res) =>{
+const response = await Teacher.findOneAndDelete({_id: req.params._id})
+res.json(response)
+})
   
- 
+
+
+app.delete('/delete/ratings/:_id', async (req, res) =>{
+  const response = await Rating.findOneAndDelete({_id: req.params._id})
+  res.json(response)
+  })
+
+ //resonse in line 75 and line 76 can change in words but must match in name always
+
+
+
 
 async function startServer() {
   await mongoose.connect(

@@ -39,7 +39,6 @@
 
         <button type="submit">Submit</button>
       </form>
-
     </div>
 
     <div class="teachers-grid">
@@ -57,9 +56,12 @@
             </div>
             <p><strong>Comment:</strong> <%= ratings[i].comment %></p>
             <p><em>By: <%= ratings[i].username %></em></p>
+
+            <button onclick="deleteRatings('<%= ratings[i]._id %>')">Delete</button>
           </div>
+          </div>
+          <% } %>
         </div>
-      <% } %>
     </div>
   </div>
 </body>

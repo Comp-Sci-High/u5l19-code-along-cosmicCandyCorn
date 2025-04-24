@@ -6,7 +6,7 @@ form.addEventListener("submit", async (e) => {
     const bookData = new FormData(form)
     const req = Object.fromEntries(bookData)
 
-    const response = await fetch("/add/rating", {
+    const response = await fetch("/add/ratings", {
         method: "POST", 
         headers: {
             "Content-Type": "application/json"
@@ -16,6 +16,10 @@ form.addEventListener("submit", async (e) => {
     const data = await response.json()
     console.log(data)
 
-    window.location.href = "/ratings"
 })
 
+async function deleteRatings(id) {
+    await fetch('/delete/ratings/' + id, {method: 'DELETE'});
+    window.location.href = "/ratings"
+   }
+   
